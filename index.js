@@ -13,6 +13,7 @@ app.use(express.json());
 const port = 3000
 
 app.get('/sugestao-categorias', (req, res) => {
+    console.log('[GET] on /sugestao-categorias');
     res.setHeader("Access-Control-Allow-Origin", "*");
     const data = [
         {id: 1, nome: 'Sugestão'}, {id: 2, nome: 'Reclamação'}, {id: 3, nome: 'Alerta'}
@@ -21,6 +22,7 @@ app.get('/sugestao-categorias', (req, res) => {
 });
 
 app.post('/sugestao', async (req, res) => {
+    console.log('[POST] on /sugestao');
     res.setHeader("Access-Control-Allow-Origin", "*");
     const body = req.body;
     console.log('Sugestão para guardar no BD: ', body);
